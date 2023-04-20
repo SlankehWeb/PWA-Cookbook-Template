@@ -11,7 +11,8 @@ const assets = [
 	'./css/materialize.min.css',
 	'./img/dish.png',
 	'https://fonts.googleapis.com/icon?family=Material+Icons',
-	'https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2'
+	'https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
+	'/pages/fallback.html'
 ]
 
 /**
@@ -68,7 +69,7 @@ self.addEventListener('fetch', event => {
 			})
 
 
-		})
+		}).catch(()=>caches.match('/pages/fallback.html'))
 	)
 })
 
